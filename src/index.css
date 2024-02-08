@@ -1,0 +1,97 @@
+h2 {
+  text-transform: none;
+}
+& > h5 {
+  font-weight: 700;
+}
+.divTitle {
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.buttonContainer Button {
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.scrollTable {
+  height: 700px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border: 1px solid rgba(0, 0, 0, 0.254);
+}
+.tableHead {
+  border-bottom: 1px solid #dddddd;
+}
+
+.tableHeadItem {
+  color: #777777;
+  font-weight: 600;
+}
+
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+th,
+td {
+  padding: 0.3rem;
+  text-align: left;
+  border: 1px solid #9999994c;
+}
+
+.tableHeadItem1 {
+  font-size: 0.8rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.personTextName {
+  font-size: 1em;
+  text-transform: capitalize;
+}
+
+/* loader */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid black;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+
+.searchInput {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid #27272767;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
