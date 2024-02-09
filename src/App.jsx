@@ -5,18 +5,7 @@ import Loader from "./components/Loader";
 function App() {
   const [data, setData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-  const myColors = [
-    "#ffcccb",
-    "#a0d2e8",
-    "#c8e6c9",
-    "#ffd699",
-    "#d1c4e9",
-    "#f0f4c3",
-    "#b2dfdb",
-    "#ffcdd2",
-    "#b3e0ff",
-    "#c5e1a5",
-  ];
+  const myColors = ["#ffcccb", "#a0d2e8", "#c8e6c9"];
   const [selectedItemColor, setSelectedItemColor] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -57,14 +46,11 @@ function App() {
         }
 
         const result = await response.json();
-        setData(result.data);
-        const defaultSelectedItem = Math.min(
-          9,
-          result.data.countries.length - 1
-        );
-        console.log(data);
-        setSelectedItem(defaultSelectedItem);
-        setSelectedItemColor(myColors[defaultSelectedItem % myColors.length]);
+        setData(result.data); // save response inside data
+
+        setSelectedItem(9);
+        // let number = Math.floor(Math.random() * myColors.length) - 1; // counter to select random number
+        setSelectedItemColor(myColors[0]);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -80,6 +66,8 @@ function App() {
       return;
     }
     setSelectedItem(index);
+
+    
     const nextColorIndex =
       (selectedItemColor ? myColors.indexOf(selectedItemColor) : 0) + 1;
     setSelectedItemColor(myColors[nextColorIndex % myColors.length]);
@@ -96,7 +84,6 @@ function App() {
               type="text"
               placeholder="Search by name..."
               className="searchInput"
-              onFocus={true}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
